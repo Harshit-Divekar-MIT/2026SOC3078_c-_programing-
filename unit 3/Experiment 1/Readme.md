@@ -1,28 +1,27 @@
-Experiment 3:Static members and friend functions
+Experiment 1 : single and multilevel inheritance
 
 
 #include <iostream>
 using namespace std;
 
-class Student {
+class A {
 public:
-    static int count;
-
-    Student() {
-        count++;
-    }
-
-    void display() {
-        cout << "Total students: " << count << endl;
+    void displayA() {
+        cout << "Base class A" << endl;
     }
 };
 
-int Student::count = 0;
+class B : public A {
+public:
+    void displayB() {
+        cout << "Derived class B" << endl;
+    }
+};
 
 int main() {
-    Student s1, s2, s3;
-
-    s1.display();
+    B obj;
+    obj.displayA();
+    obj.displayB();
 
     return 0;
 }
